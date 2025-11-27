@@ -1,0 +1,21 @@
+{% extends 'todo_app/base.html' %}
+
+{% block title %}{{ todo.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ todo.title }}</h1>
+    <p><strong>Description:</strong> {{ todo.description|default:"No description provided." }}</p>
+    <p><strong>Due Date:</strong> {{ todo.due_date|default:"Not set" }}</p>
+    <p><strong>Status:</strong> {% if todo.resolved %}Resolved{% else %}Pending{% endif %}</p>
+    <p><strong>Created On:</strong> {{ todo.created_at|date:"M d, Y H:i" }}</p>
+
+    <a href="{% url 'todo_app:todo_list' %}" class="button">Back to List</a>
+    <a href="{% url 'todo_app:todo_edit' todo.pk %}" class="button">Edit Todo</a>
+    <form action="{% url 'todo_app:todo_toggle_resolved' todo.pk %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="button {% if todo.resolved %}button-red{% else %}button-green{% endif %}">
+            {% if todo.resolved %}Mark as Pending{% else %}Mark as Resolved{% endif %}
+        </button>
+    </form>
+    <a href="{% url 'todo_app:todo_delete' todo.pk %}" class="button button-red">Delete Todo</a>
+{% endblock %}
