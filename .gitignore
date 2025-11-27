@@ -139,3 +139,9 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+####### Python #######
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
