@@ -51,6 +51,12 @@ Then, open the application in your browser:
 "$BROWSER" http://127.0.0.1:8000/
 ```
 
+### 7. Testing
+
+```bash
+python manage.py test
+```
+
 ## Tree project
 ```bash
 ├── README.md
