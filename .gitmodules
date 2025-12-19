@@ -1,0 +1,4 @@
+[submodule "02-end-to-end/lumberjack-legends"]
+	path = 02-end-to-end/lumberjack-legends
+	url = https://github.com/cncPomper/lumberjack-legends
+	branch = main
