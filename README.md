@@ -9,5 +9,6 @@
 ```bash
 ├── 01-overview
 ├── 02-end-to-end
+├── 03-mcp
 └── README.md
 ```
